@@ -51,11 +51,15 @@ void TicTacToe::display_board() const
 
 void TicTacToe::set_winner()
 {
-    if(player == "X")
+    if(check_board_full() == true)
+    {
+        winner = "C";
+    }
+    else if(player == "X")
     {
         winner = "O";
     }
-    else
+    else if(player == "O")
     {
         winner = "X";
     }
