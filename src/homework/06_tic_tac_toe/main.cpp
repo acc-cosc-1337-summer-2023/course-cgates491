@@ -16,6 +16,8 @@ int main()
 		cout<<"Enter first player: ";
 		cin>>first_player;
 
+		if(first_player == "X" || first_player == "O"){
+
 		game.start_game(first_player);
 
 		int position;
@@ -24,12 +26,20 @@ int main()
 		{
 			cout<<"Enter a position: ";
 			cin>>position;
+			if(position >= 1 && position <= 9){
 			game.mark_board(position);
 			game.display_board();
+			}
+			else cout<<"Invalid option"<<"\n";
 		}
+
+		cout<<"The winner is: "<<game.get_winner()<<"\n";
 
 		cout<<"Play again, enter y or Y? ";
 		cin>>user_choice;
+		}
+		else cout<<"invalid option"<<"\n";
+		
 
 
 	}while(user_choice == 'y'  || user_choice == 'Y');
