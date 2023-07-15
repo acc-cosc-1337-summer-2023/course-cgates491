@@ -1,6 +1,7 @@
 //cpp
 #include "tic_tac_toe.h"
 using std::cout;
+#include <math.h>
 
 bool TicTacToe::game_over()
 {
@@ -102,19 +103,6 @@ bool TicTacToe::check_board_full()
 
 bool TicTacToe::check_column_win()
 {
-    if((pegs[6] == "O" || pegs[6] == "X") && (pegs[3] == pegs[6]) && (pegs[0] == pegs[6]))
-    {
-        return true;
-    }
-    else if((pegs[7] == "O" || pegs[7] == "X") && (pegs[4] == pegs[7]) && (pegs[1] == pegs[7]))
-    {
-        return true;
-    }
-    else if((pegs[8] == "O" || pegs[8] == "X") && (pegs[5] == pegs[8]) && (pegs[2] == pegs[8]))
-    {
-        return true;
-    }
-   
 
     return false;
 
@@ -122,33 +110,12 @@ bool TicTacToe::check_column_win()
 
 bool TicTacToe::check_row_win()
 {
-    if((pegs[0] == "O" || pegs[0] == "X") && (pegs[1] == pegs[0]) && (pegs[2] == pegs[0]))
-    {
-        return true;
-    }
-    else if((pegs[3] == "O" || pegs[3] == "X") && (pegs[4] == pegs[3]) && (pegs[5] == pegs[3]))
-    {
-        return true;
-    }
-    else if((pegs[6] == "O" || pegs[6] == "X") && (pegs[7] == pegs[6]) && (pegs[8] == pegs[6]))
-    {
-        return true;
-    }
-   
 
     return false;
 }
 
 bool TicTacToe::check_diagonal_win()
 {
-    if((pegs[0] == "O" || pegs[0] == "X") && (pegs[4] == pegs[0]) && (pegs[8] == pegs[0]))
-    {
-        return true;
-    }
-    else if((pegs[2] == "O" || pegs[2] == "X") && (pegs[4] == pegs[2]) && (pegs[6] == pegs[2]))
-    {
-        return true;
-    }
 
     return false;
 }
